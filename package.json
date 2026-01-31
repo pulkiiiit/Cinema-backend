@@ -1,0 +1,19 @@
+{
+  "name": "mcu-backend",
+  "version": "1.0.0",
+  "description": "This is the E Commerce backend of the MUC project that i am working on Here we can will feature latest Cineamtic movies and anime",
+  "keywords": [
+    "backend",
+    "movies",
+    "merch",
+    "pulkit",
+    "coder"
+  ],
+  "license": "ISC",
+  "author": "Pulkit Shukla",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
