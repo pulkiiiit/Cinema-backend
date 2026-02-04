@@ -13,11 +13,180 @@ datasource db {
   provider = "postgresql"
 }
 
+enum CouponType {
+  FLAT
+  PERCENTAGE
+}
+
 model User {
+  id           String     @id @default(cuid())
+  name         String
+  password     String
+  email        String     @unique
+  profileimage String?
+  address      String?
+  role         String     @default("USER")
+  accessToken  String?
+  orderHistory Order[]
+  wishlist     Wishlist[]
+  review       Review[]
+  couponUsages CouponUsage[]
+  cart         Cart?
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+}
+
+model Category {
+  id            String        @id @default(cuid())
+  name          String
+  description   String
+  image         String
+  subCategories SubCategory[]
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+}
+
+model SubCategory {
+  id          String    @id @default(cuid())
+  name        String
+  description String
+  categoryId  String
+  category    Category  @relation(fields: [categoryId], references: [id])
+  products    Product[]
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+model Product {
+  id             String      @id @default(cuid())
+  name           String
+  description    String
+  rating         Float
+  reviews        Review[]
+  variants       Variant[]
+  wishlists      Wishlist[]
+  orderItems     orderItem[]
+  subCategoeryId String
+  subCategory    SubCategory @relation(fields: [subCategoeryId], references: [id])
+  createdAt      DateTime    @default(now())
+  updatedAt      DateTime    @updatedAt
+}
+
+model Variant {
   id        String   @id @default(cuid())
-  name      String
-  email     String   @unique
-  password  String
+  image     String
+  color     String
+  size      String
+  price     Float
+  stock     Int
+  instock   Boolean  @default(true)
+  productId String
+  product   Product  @relation(fields: [productId], references: [id])
+  cartItems CartItem[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Review {
+  id        String   @id @default(cuid())
+  rating    Int
+  comment   String
+  userId    String
+  productId String
+  user      User     @relation(fields: [userId], references: [id])
+  product   Product  @relation(fields: [productId], references: [id])
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Order {
+  id                  String      @id @default(cuid())
+  orderValue          Float
+  address             String
+  orderPaymentStatus  String
+  orderDeliveryStatus String
+  items               orderItem[]
+  couponUsage         CouponUsage?
+  payment             payment?
+  userId              String
+  orderMadeby         User        @relation(fields: [userId], references: [id])
+  createdAt           DateTime    @default(now())
+  updatedAt           DateTime    @updatedAt
+}
+
+model orderItem {
+  id        String   @id @default(cuid())
+  quantity  Int
+  price     Float
+  productId String
+  orderId   String
+  order     Order    @relation(fields: [orderId], references: [id])
+  product   Product  @relation(fields: [productId], references: [id])
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Wishlist {
+  id        String  @id @default(cuid())
+  userId    String
+  productId String
+  user      User    @relation(fields: [userId], references: [id])
+  product   Product @relation(fields: [productId], references: [id])
+}
+
+model Cart {
+  id String @id @default(cuid())
+  userId String @unique
+  items CartItem[]
+  user User @relation(fields: [userId], references: [id])
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model CartItem {
+  id String @id @default(cuid())
+  cartId String
+  variantId String
+  quantity Int
+  cart Cart @relation(fields: [cartId], references: [id])
+  variant Variant @relation(fields: [variantId], references: [id])
+}
+
+model payment {
+  id String @id @default(cuid())
+  amount Float
+  transactionId String
+  paymentMethod String
+  paymentStatus String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  orderId String @unique
+  order Order @relation(fields: [orderId], references: [id])
+}
+
+model Cooupon {
+  id String @id @default(cuid())
+  code String @unique
+  type CouponType
+  value Float
+  minorAmount Float
+  isActive Boolean @default(true)
+  maxDiscountAmount Float
+  maxUsagePerUser Int
+  expiryDate DateTime
+  couponUsages CouponUsage[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model CouponUsage {
+  id String @id @default(cuid())
+  userId String 
+  couponId String
+  orderId String @unique
+  user User @relation(fields: [userId], references: [id])
+  coupon Cooupon @relation(fields: [couponId], references: [id])
+  order Order @relation(fields: [orderId], references: [id])
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
