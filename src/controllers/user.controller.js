@@ -10,10 +10,11 @@ export const createTestUser = async (req, res) => {
       },
     });
     res.status(201).json({
-      message: "Test User Created Successfully",
+      message: "Test user has been registered successfully",
       user,
     });
   } catch (error) {
     res.status(500).json({ error: error.message }); 
   }
 };
+
