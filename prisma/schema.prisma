@@ -20,13 +20,13 @@ enum CouponType {
 
 model User {
   id           String     @id @default(cuid())
-  name         String
+  name         String?
   password     String
   email        String     @unique
   profileimage String?
   address      String?
   role         String     @default("USER")
-  accessToken  String?
+  refreshToken String?
   orderHistory Order[]
   wishlist     Wishlist[]
   review       Review[]
