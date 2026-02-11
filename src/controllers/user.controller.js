@@ -204,9 +204,7 @@ export const logoutUser = asyncHandler(async (req, res) => {
 
 })
 
-
 // update user account details
-
 export const updateUser = asyncHandler(async(req, res) => {
 
   const id = req.user.id
@@ -231,11 +229,10 @@ export const updateUser = asyncHandler(async(req, res) => {
 })
 
 // change the current password 
-
 export const updatePassword = asyncHandler(async(req,res)=> {
   
   const id = req.user.id
-  const {password} = req.body;
+  const {newPassword, oldPassword} = req.body;
 
   const user = await prisma.user.findUnique({
     where : {id}
@@ -245,13 +242,13 @@ export const updatePassword = asyncHandler(async(req,res)=> {
     throw new ApiError(400, "There might be some error from prisma while fetching user to update the passsword")
   }
 
-  const isMatch = await comparePassword(password, user.password);
+  const isMatch = await comparePassword(oldPassword, user.password);
 
   if(!isMatch){
     throw new ApiError(400, "incorrect password")
   }
 
-  const hashedPassword = await hashPassword(password);
+  const hashedPassword = await hashPassword(newPassword);
 
   const updatedUser = await prisma.user.update({
     where : {id},
@@ -264,7 +261,7 @@ export const updatePassword = asyncHandler(async(req,res)=> {
 
   res
   .status(200)
-  .json( new ApiResponse(200 , updatedUser , "changed the password of the user successfully") )
+  .json( new ApiResponse(200 , "changed the password of the user successfully") )
 })
 
 // get user by id
@@ -284,6 +281,8 @@ export const getUserDetails = asyncHandler(async(req, res) => {
   .json( new ApiResponse(200, user, "fetched user details successfully"))
 })
 // get all user 
-// get user order history 
+
+// get user order history
+ 
 // get user wishlist 
 // get user cart 
