@@ -1,10 +1,20 @@
 import express from "express";
-import { registerUser, login, logoutUser, updateUser, updatePassword, getUserDetails } from "../controllers/user.controller.js";
 import { authenticate } from "../middlewares/auth.middleware.js";
+import {upload} from "../middlewares/multer.middleware.js"
+import { registerUser, login, logoutUser, updateUser, updatePassword, getUserDetails } from "../controllers/user.controller.js";
+
 
 const router = express.Router();
 
-router.post("/register", registerUser);
+router.route("/register").post(
+    upload.single([
+        {
+            name:"image",
+            maxCount:1
+        }
+    ]), 
+    registerUser
+);
 router.route("/login").post(login);
 
 
