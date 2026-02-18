@@ -8,33 +8,22 @@ import {updateCategorySchema} from "../schema/category.schema.js"
 
 // create category
 export const createCategory = asyncHandler(async(req, res)=> {
-    const {name , description, subCategories = []} = req.body
+    const {name , description, imageUrl, subCategories = []} = req.body
 
-    if (!(name || description || image || subCategories)) {
+    if (!(name || description || imageUrl || subCategories)) {
         throw new ApiError(400, "Send all the required fields")
-    }   
-
-    const imageLoaclPath = req.files?.image[0]?.path;
-
-    if (!imageLoaclPath) {
-        throw new ApiError(400, "Image is requried" )
-    }
-    const image  = await uploadOnCloudinary(imageLoaclPath)
-
-    if(!image){
-        throw new ApiError(400, "There is some error in uploading the image to cloudinary")
-    }
+    } 
 
     const category = await prisma.category.create({
         data: {
             name : name,
             description: description,
-            image: image.url,
+            imageUrl: imageUrl,
             subCategories : {
                 create: subCategories.map((sub) => ({
                     name: sub.name
                 }))
-            }
+            }   
         },
         include: {
             subCategories: true

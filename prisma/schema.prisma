@@ -23,7 +23,7 @@ model User {
   name         String?
   password     String
   email        String     @unique
-  profileimage String?
+  profileimageUrl String?
   address      String?
   role         String     @default("USER")
   refreshToken String?
@@ -40,7 +40,7 @@ model Category {
   id            String        @id @default(cuid())
   name          String
   description   String
-  image         String
+  imageUrl         String?
   subCategories SubCategory[]
   createdAt     DateTime      @default(now())
   updatedAt     DateTime      @updatedAt
@@ -51,6 +51,7 @@ model SubCategory {
   name        String
   description String
   categoryId  String
+  imageUrl    String?
   category    Category  @relation(fields: [categoryId], references: [id])
   products    Product[]
   createdAt   DateTime  @default(now())
@@ -61,7 +62,7 @@ model Product {
   id             String      @id @default(cuid())
   name           String
   description    String
-  rating         Float
+  rating         Float @default(0)
   reviews        Review[]
   variants       Variant[]
   wishlists      Wishlist[]
@@ -74,9 +75,9 @@ model Product {
 
 model Variant {
   id        String   @id @default(cuid())
-  image     String
-  color     String
-  size      String
+  imageUrl     String?
+  color     String?
+  size      String?
   price     Float
   stock     Int
   instock   Boolean  @default(true)

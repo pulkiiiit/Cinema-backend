@@ -304,7 +304,7 @@ export type ProductCreateInput = {
   id?: string
   name: string
   description: string
-  rating: number
+  rating?: number
   createdAt?: Date | string
   updatedAt?: Date | string
   reviews?: Prisma.ReviewCreateNestedManyWithoutProductInput
@@ -318,7 +318,7 @@ export type ProductUncheckedCreateInput = {
   id?: string
   name: string
   description: string
-  rating: number
+  rating?: number
   subCategoeryId: string
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -360,7 +360,7 @@ export type ProductCreateManyInput = {
   id?: string
   name: string
   description: string
-  rating: number
+  rating?: number
   subCategoeryId: string
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -548,7 +548,7 @@ export type ProductCreateWithoutSubCategoryInput = {
   id?: string
   name: string
   description: string
-  rating: number
+  rating?: number
   createdAt?: Date | string
   updatedAt?: Date | string
   reviews?: Prisma.ReviewCreateNestedManyWithoutProductInput
@@ -561,7 +561,7 @@ export type ProductUncheckedCreateWithoutSubCategoryInput = {
   id?: string
   name: string
   description: string
-  rating: number
+  rating?: number
   createdAt?: Date | string
   updatedAt?: Date | string
   reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutProductInput
@@ -613,7 +613,7 @@ export type ProductCreateWithoutVariantsInput = {
   id?: string
   name: string
   description: string
-  rating: number
+  rating?: number
   createdAt?: Date | string
   updatedAt?: Date | string
   reviews?: Prisma.ReviewCreateNestedManyWithoutProductInput
@@ -626,7 +626,7 @@ export type ProductUncheckedCreateWithoutVariantsInput = {
   id?: string
   name: string
   description: string
-  rating: number
+  rating?: number
   subCategoeryId: string
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -681,7 +681,7 @@ export type ProductCreateWithoutReviewsInput = {
   id?: string
   name: string
   description: string
-  rating: number
+  rating?: number
   createdAt?: Date | string
   updatedAt?: Date | string
   variants?: Prisma.VariantCreateNestedManyWithoutProductInput
@@ -694,7 +694,7 @@ export type ProductUncheckedCreateWithoutReviewsInput = {
   id?: string
   name: string
   description: string
-  rating: number
+  rating?: number
   subCategoeryId: string
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -749,7 +749,7 @@ export type ProductCreateWithoutOrderItemsInput = {
   id?: string
   name: string
   description: string
-  rating: number
+  rating?: number
   createdAt?: Date | string
   updatedAt?: Date | string
   reviews?: Prisma.ReviewCreateNestedManyWithoutProductInput
@@ -762,7 +762,7 @@ export type ProductUncheckedCreateWithoutOrderItemsInput = {
   id?: string
   name: string
   description: string
-  rating: number
+  rating?: number
   subCategoeryId: string
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -817,7 +817,7 @@ export type ProductCreateWithoutWishlistsInput = {
   id?: string
   name: string
   description: string
-  rating: number
+  rating?: number
   createdAt?: Date | string
   updatedAt?: Date | string
   reviews?: Prisma.ReviewCreateNestedManyWithoutProductInput
@@ -830,7 +830,7 @@ export type ProductUncheckedCreateWithoutWishlistsInput = {
   id?: string
   name: string
   description: string
-  rating: number
+  rating?: number
   subCategoeryId: string
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -885,7 +885,7 @@ export type ProductCreateManySubCategoryInput = {
   id?: string
   name: string
   description: string
-  rating: number
+  rating?: number
   createdAt?: Date | string
   updatedAt?: Date | string
 }

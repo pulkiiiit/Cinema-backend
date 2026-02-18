@@ -1497,7 +1497,7 @@ export const UserScalarFieldEnum = {
   name: 'name',
   password: 'password',
   email: 'email',
-  profileimage: 'profileimage',
+  profileimageUrl: 'profileimageUrl',
   address: 'address',
   role: 'role',
   refreshToken: 'refreshToken',
@@ -1512,7 +1512,7 @@ export const CategoryScalarFieldEnum = {
   id: 'id',
   name: 'name',
   description: 'description',
-  image: 'image',
+  imageUrl: 'imageUrl',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 } as const
@@ -1525,6 +1525,7 @@ export const SubCategoryScalarFieldEnum = {
   name: 'name',
   description: 'description',
   categoryId: 'categoryId',
+  imageUrl: 'imageUrl',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 } as const
@@ -1547,7 +1548,7 @@ export type ProductScalarFieldEnum = (typeof ProductScalarFieldEnum)[keyof typeo
 
 export const VariantScalarFieldEnum = {
   id: 'id',
-  image: 'image',
+  imageUrl: 'imageUrl',
   color: 'color',
   size: 'size',
   price: 'price',
