@@ -19,12 +19,13 @@ app.use(cookieParser());
 import userRouter from "./routes/user.routes.js";
 import productRouter from "./routes/product.routes.js";
 import categoryRouter from "./routes/category.route.js";
-import subcategory from "./routes/subCategory.routes.js"
-
+import subcategoryRouter from "./routes/subCategory.routes.js"
+import wishlistRouter from "./routes/wishlist.route.js"
 
 app.use("/api/users", userRouter);
 app.use("/api/products",productRouter);
 app.use("/api/category",categoryRouter)
-app.use("/api/subcategory",subcategory)
+app.use("/api/subcategory",subcategoryRouter)
+app.use("/api/wishlist",wishlistRouter)
 
 export default app;

@@ -85,6 +85,11 @@ export type orderItem = Prisma.orderItemModel
  */
 export type Wishlist = Prisma.WishlistModel
 /**
+ * Model wishlistItem
+ * 
+ */
+export type wishlistItem = Prisma.wishlistItemModel
+/**
  * Model Cart
  * 
  */

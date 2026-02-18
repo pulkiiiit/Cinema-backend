@@ -65,7 +65,7 @@ model Product {
   rating         Float @default(0)
   reviews        Review[]
   variants       Variant[]
-  wishlists      Wishlist[]
+  wishlistItems wishlistItem[]
   orderItems     orderItem[]
   subCategoeryId String
   subCategory    SubCategory @relation(fields: [subCategoeryId], references: [id])
@@ -129,10 +129,22 @@ model orderItem {
 
 model Wishlist {
   id        String  @id @default(cuid())
-  userId    String
-  productId String
+  userId    String  @unique
+  items     wishlistItem[]
   user      User    @relation(fields: [userId], references: [id])
-  product   Product @relation(fields: [productId], references: [id])
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model wishlistItem {
+  id          String   @id @default(uuid())
+  wishlistId  String
+  productId   String
+
+  wishlist    Wishlist @relation(fields: [wishlistId], references: [id])
+  product     Product  @relation(fields: [productId], references: [id])
+
+  @@unique([wishlistId, productId]) // prevent duplicates
 }
 
 model Cart {

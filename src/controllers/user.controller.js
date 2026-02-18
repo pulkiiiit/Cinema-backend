@@ -1,8 +1,8 @@
 import { asyncHandler } from "../utils/asyncHandler.js";
-import { prisma } from "../../lib/prisma.js";
-import { hashPassword, comparePassword } from "../utils/password.js";
 import { ApiError } from "../utils/apiError.js";
 import { ApiResponse } from "../utils/apiResponse.js";
+import { prisma } from "../../lib/prisma.js";
+import { hashPassword, comparePassword } from "../utils/password.js";
 import { generateRefreshToken, generateToken } from "../utils/token.js";
 import { updateUserSchema } from "../schema/user.schema.js";
 import { object } from "zod";
