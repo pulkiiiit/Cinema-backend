@@ -257,7 +257,7 @@ export type CartItemScalarWhereWithAggregatesInput = {
 
 export type CartItemCreateInput = {
   id?: string
-  quantity: number
+  quantity?: number
   cart: Prisma.CartCreateNestedOneWithoutItemsInput
   variant: Prisma.VariantCreateNestedOneWithoutCartItemsInput
 }
@@ -266,7 +266,7 @@ export type CartItemUncheckedCreateInput = {
   id?: string
   cartId: string
   variantId: string
-  quantity: number
+  quantity?: number
 }
 
 export type CartItemUpdateInput = {
@@ -287,7 +287,7 @@ export type CartItemCreateManyInput = {
   id?: string
   cartId: string
   variantId: string
-  quantity: number
+  quantity?: number
 }
 
 export type CartItemUpdateManyMutationInput = {
@@ -427,14 +427,14 @@ export type CartItemUncheckedUpdateManyWithoutCartNestedInput = {
 
 export type CartItemCreateWithoutVariantInput = {
   id?: string
-  quantity: number
+  quantity?: number
   cart: Prisma.CartCreateNestedOneWithoutItemsInput
 }
 
 export type CartItemUncheckedCreateWithoutVariantInput = {
   id?: string
   cartId: string
-  quantity: number
+  quantity?: number
 }
 
 export type CartItemCreateOrConnectWithoutVariantInput = {
@@ -475,14 +475,14 @@ export type CartItemScalarWhereInput = {
 
 export type CartItemCreateWithoutCartInput = {
   id?: string
-  quantity: number
+  quantity?: number
   variant: Prisma.VariantCreateNestedOneWithoutCartItemsInput
 }
 
 export type CartItemUncheckedCreateWithoutCartInput = {
   id?: string
   variantId: string
-  quantity: number
+  quantity?: number
 }
 
 export type CartItemCreateOrConnectWithoutCartInput = {
@@ -514,7 +514,7 @@ export type CartItemUpdateManyWithWhereWithoutCartInput = {
 export type CartItemCreateManyVariantInput = {
   id?: string
   cartId: string
-  quantity: number
+  quantity?: number
 }
 
 export type CartItemUpdateWithoutVariantInput = {
@@ -538,7 +538,7 @@ export type CartItemUncheckedUpdateManyWithoutVariantInput = {
 export type CartItemCreateManyCartInput = {
   id?: string
   variantId: string
-  quantity: number
+  quantity?: number
 }
 
 export type CartItemUpdateWithoutCartInput = {
