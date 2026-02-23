@@ -64,7 +64,7 @@ export const ModelName = {
   Cart: 'Cart',
   CartItem: 'CartItem',
   payment: 'payment',
-  Cooupon: 'Cooupon',
+  Coupon: 'Coupon',
   CouponUsage: 'CouponUsage'
 } as const
 
@@ -146,6 +146,7 @@ export const VariantScalarFieldEnum = {
   price: 'price',
   stock: 'stock',
   instock: 'instock',
+  isActive: 'isActive',
   productId: 'productId',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
@@ -216,6 +217,7 @@ export type WishlistItemScalarFieldEnum = (typeof WishlistItemScalarFieldEnum)[k
 export const CartScalarFieldEnum = {
   id: 'id',
   userId: 'userId',
+  couponId: 'couponId',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 } as const
@@ -247,12 +249,12 @@ export const PaymentScalarFieldEnum = {
 export type PaymentScalarFieldEnum = (typeof PaymentScalarFieldEnum)[keyof typeof PaymentScalarFieldEnum]
 
 
-export const CoouponScalarFieldEnum = {
+export const CouponScalarFieldEnum = {
   id: 'id',
   code: 'code',
   type: 'type',
   value: 'value',
-  minorAmount: 'minorAmount',
+  minimumCartAmount: 'minimumCartAmount',
   isActive: 'isActive',
   maxDiscountAmount: 'maxDiscountAmount',
   maxUsagePerUser: 'maxUsagePerUser',
@@ -261,7 +263,7 @@ export const CoouponScalarFieldEnum = {
   updatedAt: 'updatedAt'
 } as const
 
-export type CoouponScalarFieldEnum = (typeof CoouponScalarFieldEnum)[keyof typeof CoouponScalarFieldEnum]
+export type CouponScalarFieldEnum = (typeof CouponScalarFieldEnum)[keyof typeof CouponScalarFieldEnum]
 
 
 export const CouponUsageScalarFieldEnum = {

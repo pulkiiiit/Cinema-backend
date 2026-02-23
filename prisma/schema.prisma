@@ -81,6 +81,7 @@ model Variant {
   price     Float
   stock     Int
   instock   Boolean  @default(true)
+  isActive  Boolean @default(true)
   productId String
   product   Product  @relation(fields: [productId], references: [id])
   cartItems CartItem[]
@@ -151,6 +152,8 @@ model Cart {
   id String @id @default(cuid())
   userId String @unique
   items CartItem[]
+  couponId String?
+  coupon Coupon? @relation(fields: [couponId], references: [id])
   user User @relation(fields: [userId], references: [id])
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -161,8 +164,9 @@ model CartItem {
   cartId String
   variantId String
   quantity Int @default(1)
-  cart Cart @relation(fields: [cartId], references: [id])
+  cart Cart @relation(fields: [cartId], references: [id], onDelete: Cascade)
   variant Variant @relation(fields: [variantId], references: [id])
+  @@unique([cartId, variantId])
 }
 
 model payment {
@@ -177,16 +181,17 @@ model payment {
   order Order @relation(fields: [orderId], references: [id])
 }
 
-model Cooupon {
+model Coupon {
   id String @id @default(cuid())
   code String @unique
   type CouponType
   value Float
-  minorAmount Float
+  minimumCartAmount Float?
   isActive Boolean @default(true)
   maxDiscountAmount Float
   maxUsagePerUser Int
   expiryDate DateTime
+  carts  Cart[]
   couponUsages CouponUsage[]
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -198,7 +203,7 @@ model CouponUsage {
   couponId String
   orderId String @unique
   user User @relation(fields: [userId], references: [id])
-  coupon Cooupon @relation(fields: [couponId], references: [id])
+  coupon Coupon @relation(fields: [couponId], references: [id])
   order Order @relation(fields: [orderId], references: [id])
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt

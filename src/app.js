@@ -21,11 +21,13 @@ import productRouter from "./routes/product.routes.js";
 import categoryRouter from "./routes/category.route.js";
 import subcategoryRouter from "./routes/subCategory.routes.js"
 import wishlistRouter from "./routes/wishlist.route.js"
+import cartRouter from "./routes/cart.routes.js"
 
 app.use("/api/users", userRouter);
 app.use("/api/products",productRouter);
 app.use("/api/category",categoryRouter)
 app.use("/api/subcategory",subcategoryRouter)
 app.use("/api/wishlist",wishlistRouter)
+app.use("/api/cart",cartRouter)
 
 export default app;
