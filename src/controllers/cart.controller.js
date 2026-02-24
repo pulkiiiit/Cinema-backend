@@ -519,7 +519,7 @@ export const applyCouponToCart = asyncHandler(async (req, res) => {
   // 6. Return success
 
   const userId = req.user.id;
-  const code = req.body.code?.trim().toUpperCase();
+  const code = req.body.code?.trim();
 
   if (!code) {
     throw new ApiError(400, "Send the Coupon code");

@@ -22,6 +22,8 @@ import categoryRouter from "./routes/category.route.js";
 import subcategoryRouter from "./routes/subCategory.routes.js"
 import wishlistRouter from "./routes/wishlist.route.js"
 import cartRouter from "./routes/cart.routes.js"
+import variantRouter from "./routes/variant.routes.js"
+import couponRouter from "./routes/coupon.routes.js"
 
 app.use("/api/users", userRouter);
 app.use("/api/products",productRouter);
@@ -29,5 +31,7 @@ app.use("/api/category",categoryRouter)
 app.use("/api/subcategory",subcategoryRouter)
 app.use("/api/wishlist",wishlistRouter)
 app.use("/api/cart",cartRouter)
+app.use("/api/variant",variantRouter)
+app.use("/api/coupon",couponRouter)
 
 export default app;
