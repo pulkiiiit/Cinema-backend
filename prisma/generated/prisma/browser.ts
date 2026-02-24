@@ -83,10 +83,10 @@ export type CartItem = Prisma.CartItemModel
  */
 export type payment = Prisma.paymentModel
 /**
- * Model Cooupon
+ * Model Coupon
  * 
  */
-export type Cooupon = Prisma.CoouponModel
+export type Coupon = Prisma.CouponModel
 /**
  * Model CouponUsage
  * 
