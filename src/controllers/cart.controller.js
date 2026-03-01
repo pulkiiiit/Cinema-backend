@@ -481,7 +481,7 @@ export const validateCart = asyncHandler(async (req, res) => {
         discount = coupon.value;
       }
 
-      if (coupon.type === "PERCENT") {
+      if (coupon.type === "PERCENTAGE") {
         discount = (subTotal * coupon.value) / 100;
       }
 
