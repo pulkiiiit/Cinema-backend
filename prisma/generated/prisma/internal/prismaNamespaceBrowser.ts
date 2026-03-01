@@ -58,12 +58,12 @@ export const ModelName = {
   Variant: 'Variant',
   Review: 'Review',
   Order: 'Order',
-  orderItem: 'orderItem',
+  OrderItem: 'OrderItem',
   Wishlist: 'Wishlist',
   wishlistItem: 'wishlistItem',
   Cart: 'Cart',
   CartItem: 'CartItem',
-  payment: 'payment',
+  Payment: 'Payment',
   Coupon: 'Coupon',
   CouponUsage: 'CouponUsage'
 } as const
@@ -170,10 +170,13 @@ export type ReviewScalarFieldEnum = (typeof ReviewScalarFieldEnum)[keyof typeof 
 
 export const OrderScalarFieldEnum = {
   id: 'id',
+  subTotal: 'subTotal',
+  discount: 'discount',
   orderValue: 'orderValue',
-  address: 'address',
-  orderPaymentStatus: 'orderPaymentStatus',
-  orderDeliveryStatus: 'orderDeliveryStatus',
+  shippingAddress: 'shippingAddress',
+  currency: 'currency',
+  orderStatus: 'orderStatus',
+  paymentStatus: 'paymentStatus',
   userId: 'userId',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
@@ -185,8 +188,13 @@ export type OrderScalarFieldEnum = (typeof OrderScalarFieldEnum)[keyof typeof Or
 export const OrderItemScalarFieldEnum = {
   id: 'id',
   quantity: 'quantity',
-  price: 'price',
-  productId: 'productId',
+  itemTotal: 'itemTotal',
+  priceAtPurchase: 'priceAtPurchase',
+  imageUrl: 'imageUrl',
+  productName: 'productName',
+  color: 'color',
+  size: 'size',
+  variantId: 'variantId',
   orderId: 'orderId',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
@@ -238,12 +246,16 @@ export type CartItemScalarFieldEnum = (typeof CartItemScalarFieldEnum)[keyof typ
 export const PaymentScalarFieldEnum = {
   id: 'id',
   amount: 'amount',
-  transactionId: 'transactionId',
+  currency: 'currency',
+  razorpayOrderId: 'razorpayOrderId',
+  razorpayPaymentId: 'razorpayPaymentId',
+  razorpaySignature: 'razorpaySignature',
   paymentMethod: 'paymentMethod',
   paymentStatus: 'paymentStatus',
+  userId: 'userId',
+  orderId: 'orderId',
   createdAt: 'createdAt',
-  updatedAt: 'updatedAt',
-  orderId: 'orderId'
+  updatedAt: 'updatedAt'
 } as const
 
 export type PaymentScalarFieldEnum = (typeof PaymentScalarFieldEnum)[keyof typeof PaymentScalarFieldEnum]
@@ -286,6 +298,13 @@ export const SortOrder = {
 export type SortOrder = (typeof SortOrder)[keyof typeof SortOrder]
 
 
+export const JsonNullValueInput = {
+  JsonNull: JsonNull
+} as const
+
+export type JsonNullValueInput = (typeof JsonNullValueInput)[keyof typeof JsonNullValueInput]
+
+
 export const QueryMode = {
   default: 'default',
   insensitive: 'insensitive'
@@ -300,4 +319,13 @@ export const NullsOrder = {
 } as const
 
 export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
+
+
+export const JsonNullValueFilter = {
+  DbNull: DbNull,
+  JsonNull: JsonNull,
+  AnyNull: AnyNull
+} as const
+
+export type JsonNullValueFilter = (typeof JsonNullValueFilter)[keyof typeof JsonNullValueFilter]
 

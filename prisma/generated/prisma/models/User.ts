@@ -311,7 +311,7 @@ export type UserCreateInput = {
   refreshToken?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  orderHistory?: Prisma.OrderCreateNestedManyWithoutOrderMadebyInput
+  orderHistory?: Prisma.OrderCreateNestedManyWithoutOrderMadeByInput
   wishlist?: Prisma.WishlistCreateNestedManyWithoutUserInput
   review?: Prisma.ReviewCreateNestedManyWithoutUserInput
   couponUsages?: Prisma.CouponUsageCreateNestedManyWithoutUserInput
@@ -329,7 +329,7 @@ export type UserUncheckedCreateInput = {
   refreshToken?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  orderHistory?: Prisma.OrderUncheckedCreateNestedManyWithoutOrderMadebyInput
+  orderHistory?: Prisma.OrderUncheckedCreateNestedManyWithoutOrderMadeByInput
   wishlist?: Prisma.WishlistUncheckedCreateNestedManyWithoutUserInput
   review?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput
   couponUsages?: Prisma.CouponUsageUncheckedCreateNestedManyWithoutUserInput
@@ -347,7 +347,7 @@ export type UserUpdateInput = {
   refreshToken?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  orderHistory?: Prisma.OrderUpdateManyWithoutOrderMadebyNestedInput
+  orderHistory?: Prisma.OrderUpdateManyWithoutOrderMadeByNestedInput
   wishlist?: Prisma.WishlistUpdateManyWithoutUserNestedInput
   review?: Prisma.ReviewUpdateManyWithoutUserNestedInput
   couponUsages?: Prisma.CouponUsageUpdateManyWithoutUserNestedInput
@@ -365,7 +365,7 @@ export type UserUncheckedUpdateInput = {
   refreshToken?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  orderHistory?: Prisma.OrderUncheckedUpdateManyWithoutOrderMadebyNestedInput
+  orderHistory?: Prisma.OrderUncheckedUpdateManyWithoutOrderMadeByNestedInput
   wishlist?: Prisma.WishlistUncheckedUpdateManyWithoutUserNestedInput
   review?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput
   couponUsages?: Prisma.CouponUsageUncheckedUpdateManyWithoutUserNestedInput
@@ -548,7 +548,7 @@ export type UserCreateWithoutReviewInput = {
   refreshToken?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  orderHistory?: Prisma.OrderCreateNestedManyWithoutOrderMadebyInput
+  orderHistory?: Prisma.OrderCreateNestedManyWithoutOrderMadeByInput
   wishlist?: Prisma.WishlistCreateNestedManyWithoutUserInput
   couponUsages?: Prisma.CouponUsageCreateNestedManyWithoutUserInput
   cart?: Prisma.CartCreateNestedOneWithoutUserInput
@@ -565,7 +565,7 @@ export type UserUncheckedCreateWithoutReviewInput = {
   refreshToken?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  orderHistory?: Prisma.OrderUncheckedCreateNestedManyWithoutOrderMadebyInput
+  orderHistory?: Prisma.OrderUncheckedCreateNestedManyWithoutOrderMadeByInput
   wishlist?: Prisma.WishlistUncheckedCreateNestedManyWithoutUserInput
   couponUsages?: Prisma.CouponUsageUncheckedCreateNestedManyWithoutUserInput
   cart?: Prisma.CartUncheckedCreateNestedOneWithoutUserInput
@@ -598,7 +598,7 @@ export type UserUpdateWithoutReviewInput = {
   refreshToken?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  orderHistory?: Prisma.OrderUpdateManyWithoutOrderMadebyNestedInput
+  orderHistory?: Prisma.OrderUpdateManyWithoutOrderMadeByNestedInput
   wishlist?: Prisma.WishlistUpdateManyWithoutUserNestedInput
   couponUsages?: Prisma.CouponUsageUpdateManyWithoutUserNestedInput
   cart?: Prisma.CartUpdateOneWithoutUserNestedInput
@@ -615,7 +615,7 @@ export type UserUncheckedUpdateWithoutReviewInput = {
   refreshToken?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  orderHistory?: Prisma.OrderUncheckedUpdateManyWithoutOrderMadebyNestedInput
+  orderHistory?: Prisma.OrderUncheckedUpdateManyWithoutOrderMadeByNestedInput
   wishlist?: Prisma.WishlistUncheckedUpdateManyWithoutUserNestedInput
   couponUsages?: Prisma.CouponUsageUncheckedUpdateManyWithoutUserNestedInput
   cart?: Prisma.CartUncheckedUpdateOneWithoutUserNestedInput
@@ -716,7 +716,7 @@ export type UserCreateWithoutWishlistInput = {
   refreshToken?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  orderHistory?: Prisma.OrderCreateNestedManyWithoutOrderMadebyInput
+  orderHistory?: Prisma.OrderCreateNestedManyWithoutOrderMadeByInput
   review?: Prisma.ReviewCreateNestedManyWithoutUserInput
   couponUsages?: Prisma.CouponUsageCreateNestedManyWithoutUserInput
   cart?: Prisma.CartCreateNestedOneWithoutUserInput
@@ -733,7 +733,7 @@ export type UserUncheckedCreateWithoutWishlistInput = {
   refreshToken?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  orderHistory?: Prisma.OrderUncheckedCreateNestedManyWithoutOrderMadebyInput
+  orderHistory?: Prisma.OrderUncheckedCreateNestedManyWithoutOrderMadeByInput
   review?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput
   couponUsages?: Prisma.CouponUsageUncheckedCreateNestedManyWithoutUserInput
   cart?: Prisma.CartUncheckedCreateNestedOneWithoutUserInput
@@ -766,7 +766,7 @@ export type UserUpdateWithoutWishlistInput = {
   refreshToken?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  orderHistory?: Prisma.OrderUpdateManyWithoutOrderMadebyNestedInput
+  orderHistory?: Prisma.OrderUpdateManyWithoutOrderMadeByNestedInput
   review?: Prisma.ReviewUpdateManyWithoutUserNestedInput
   couponUsages?: Prisma.CouponUsageUpdateManyWithoutUserNestedInput
   cart?: Prisma.CartUpdateOneWithoutUserNestedInput
@@ -783,7 +783,7 @@ export type UserUncheckedUpdateWithoutWishlistInput = {
   refreshToken?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  orderHistory?: Prisma.OrderUncheckedUpdateManyWithoutOrderMadebyNestedInput
+  orderHistory?: Prisma.OrderUncheckedUpdateManyWithoutOrderMadeByNestedInput
   review?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput
   couponUsages?: Prisma.CouponUsageUncheckedUpdateManyWithoutUserNestedInput
   cart?: Prisma.CartUncheckedUpdateOneWithoutUserNestedInput
@@ -800,7 +800,7 @@ export type UserCreateWithoutCartInput = {
   refreshToken?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  orderHistory?: Prisma.OrderCreateNestedManyWithoutOrderMadebyInput
+  orderHistory?: Prisma.OrderCreateNestedManyWithoutOrderMadeByInput
   wishlist?: Prisma.WishlistCreateNestedManyWithoutUserInput
   review?: Prisma.ReviewCreateNestedManyWithoutUserInput
   couponUsages?: Prisma.CouponUsageCreateNestedManyWithoutUserInput
@@ -817,7 +817,7 @@ export type UserUncheckedCreateWithoutCartInput = {
   refreshToken?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  orderHistory?: Prisma.OrderUncheckedCreateNestedManyWithoutOrderMadebyInput
+  orderHistory?: Prisma.OrderUncheckedCreateNestedManyWithoutOrderMadeByInput
   wishlist?: Prisma.WishlistUncheckedCreateNestedManyWithoutUserInput
   review?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput
   couponUsages?: Prisma.CouponUsageUncheckedCreateNestedManyWithoutUserInput
@@ -850,7 +850,7 @@ export type UserUpdateWithoutCartInput = {
   refreshToken?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  orderHistory?: Prisma.OrderUpdateManyWithoutOrderMadebyNestedInput
+  orderHistory?: Prisma.OrderUpdateManyWithoutOrderMadeByNestedInput
   wishlist?: Prisma.WishlistUpdateManyWithoutUserNestedInput
   review?: Prisma.ReviewUpdateManyWithoutUserNestedInput
   couponUsages?: Prisma.CouponUsageUpdateManyWithoutUserNestedInput
@@ -867,7 +867,7 @@ export type UserUncheckedUpdateWithoutCartInput = {
   refreshToken?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  orderHistory?: Prisma.OrderUncheckedUpdateManyWithoutOrderMadebyNestedInput
+  orderHistory?: Prisma.OrderUncheckedUpdateManyWithoutOrderMadeByNestedInput
   wishlist?: Prisma.WishlistUncheckedUpdateManyWithoutUserNestedInput
   review?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput
   couponUsages?: Prisma.CouponUsageUncheckedUpdateManyWithoutUserNestedInput
@@ -884,7 +884,7 @@ export type UserCreateWithoutCouponUsagesInput = {
   refreshToken?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  orderHistory?: Prisma.OrderCreateNestedManyWithoutOrderMadebyInput
+  orderHistory?: Prisma.OrderCreateNestedManyWithoutOrderMadeByInput
   wishlist?: Prisma.WishlistCreateNestedManyWithoutUserInput
   review?: Prisma.ReviewCreateNestedManyWithoutUserInput
   cart?: Prisma.CartCreateNestedOneWithoutUserInput
@@ -901,7 +901,7 @@ export type UserUncheckedCreateWithoutCouponUsagesInput = {
   refreshToken?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  orderHistory?: Prisma.OrderUncheckedCreateNestedManyWithoutOrderMadebyInput
+  orderHistory?: Prisma.OrderUncheckedCreateNestedManyWithoutOrderMadeByInput
   wishlist?: Prisma.WishlistUncheckedCreateNestedManyWithoutUserInput
   review?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput
   cart?: Prisma.CartUncheckedCreateNestedOneWithoutUserInput
@@ -934,7 +934,7 @@ export type UserUpdateWithoutCouponUsagesInput = {
   refreshToken?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  orderHistory?: Prisma.OrderUpdateManyWithoutOrderMadebyNestedInput
+  orderHistory?: Prisma.OrderUpdateManyWithoutOrderMadeByNestedInput
   wishlist?: Prisma.WishlistUpdateManyWithoutUserNestedInput
   review?: Prisma.ReviewUpdateManyWithoutUserNestedInput
   cart?: Prisma.CartUpdateOneWithoutUserNestedInput
@@ -951,7 +951,7 @@ export type UserUncheckedUpdateWithoutCouponUsagesInput = {
   refreshToken?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  orderHistory?: Prisma.OrderUncheckedUpdateManyWithoutOrderMadebyNestedInput
+  orderHistory?: Prisma.OrderUncheckedUpdateManyWithoutOrderMadeByNestedInput
   wishlist?: Prisma.WishlistUncheckedUpdateManyWithoutUserNestedInput
   review?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput
   cart?: Prisma.CartUncheckedUpdateOneWithoutUserNestedInput

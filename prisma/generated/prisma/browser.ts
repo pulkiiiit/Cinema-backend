@@ -53,10 +53,10 @@ export type Review = Prisma.ReviewModel
  */
 export type Order = Prisma.OrderModel
 /**
- * Model orderItem
+ * Model OrderItem
  * 
  */
-export type orderItem = Prisma.orderItemModel
+export type OrderItem = Prisma.OrderItemModel
 /**
  * Model Wishlist
  * 
@@ -78,10 +78,10 @@ export type Cart = Prisma.CartModel
  */
 export type CartItem = Prisma.CartItemModel
 /**
- * Model payment
+ * Model Payment
  * 
  */
-export type payment = Prisma.paymentModel
+export type Payment = Prisma.PaymentModel
 /**
  * Model Coupon
  * 
