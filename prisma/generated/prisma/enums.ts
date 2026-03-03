@@ -31,6 +31,7 @@ export type OrderStatus = (typeof OrderStatus)[keyof typeof OrderStatus]
 
 export const PaymentStatus = {
   UNPAID: 'UNPAID',
+  PENDING: 'PENDING',
   PAID: 'PAID',
   FAILED: 'FAILED',
   REFUND_PENDING: 'REFUND_PENDING',
