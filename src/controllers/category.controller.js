@@ -135,6 +135,19 @@ export const deleteCategory = asyncHandler(async(req, res)=> {
     res.status(200).json(new ApiResponse(200, "Deleted the category successfully "))
 })
 
+// Get all category 
+export const getAllCategory = asyncHandler(async(req, res) => {
+
+    const categories = await prisma.category.findMany({
+        include :{
+            subCategories : true
+        }
+    })
+
+    return res
+    .status(200)
+    .json(new ApiResponse(200, categories, "Fetched the all the categories "))
+})
 
 // get all product in the category 
 export const getAllProductsByCategoryId = asyncHandler(async(req, res)=> {})

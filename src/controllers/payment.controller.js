@@ -4,10 +4,7 @@ import { ApiResponse } from "../utils/apiResponse.js";
 import { prisma } from "../../lib/prisma.js";
 import Razorpay from "razorpay";
 import crypto from "crypto";
-import API from "razorpay/dist/types/api.js";
 import { promise } from "zod";
-import { pick } from "zod/mini";
-import { th } from "zod/locales";
 
 const razorpay = new Razorpay({
   key_id: process.env.RAZORPAY_KEY_ID,
