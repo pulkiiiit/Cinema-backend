@@ -1,7 +1,7 @@
 import express from "express";
 import { authenticate } from "../middlewares/auth.middleware.js";
 import {upload} from "../middlewares/multer.middleware.js"
-import {createCategory,getCategoryById,updateCategory,deleteCategory,getAllProductsByCategoryId,getAllSubcategoryByCategoryId} from "../controllers/category.controller.js"
+import {createCategory,getCategoryById,updateCategory,deleteCategory,getAllProductsByCategoryId,getAllSubcategoryByCategoryId, getAllCategory} from "../controllers/category.controller.js"
 
 
 const router = express.Router();
@@ -11,6 +11,7 @@ const router = express.Router();
 router.route("/getCategoryById/:id").get(getCategoryById)
 router.route("/getAllProductsByCategoryId/:id").get(getAllProductsByCategoryId)
 router.route("/getAllSubcategoryByCategoryId/:id").get(getAllSubcategoryByCategoryId)
+router.route("/getAllCategory").get(getAllCategory)
 
 
 // PROTECTED ROUTES

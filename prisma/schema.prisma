@@ -5,8 +5,7 @@
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
 generator client {
-  provider = "prisma-client"
-  output   = "./generated/prisma"
+  provider = "prisma-client-js"
 }
 
 datasource db {
@@ -29,10 +28,16 @@ enum OrderStatus {
 
 enum PaymentStatus {
   UNPAID
+  PENDING
   PAID
   FAILED
   REFUND_PENDING
   REFUNDED
+}
+
+enum UserRole {
+  USER
+  ADMIN
 }
 
 model User {
@@ -42,7 +47,7 @@ model User {
   email           String        @unique
   profileimageUrl String?
   address         String?
-  role            String        @default("USER")
+  role            UserRole        @default(USER)
   refreshToken    String?
   orderHistory    Order[]
   wishlist        Wishlist[]
